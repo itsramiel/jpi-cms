@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_nearby_poi_nearby_pois",
+  "info": {
+    "displayName": "nearbyPOI",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "distance": {
+      "type": "decimal",
+      "required": true
+    },
+    "unit": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
