@@ -34,20 +34,24 @@
       "type": "richtext",
       "required": true
     },
-    "imageThumbnail": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "blogs"
+    },
+    "imageThumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }

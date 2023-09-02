@@ -83,15 +83,6 @@
       "component": "pricing.pricing",
       "required": false
     },
-    "images": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "json",
-      "required": false
-    },
     "nearbyPOI": {
       "displayName": "nearbyPOI",
       "type": "component",
@@ -102,6 +93,18 @@
         }
       },
       "component": "nearby-poi.nearby-poi"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     }
   }
 }
