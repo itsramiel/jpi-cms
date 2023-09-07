@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "text": {
+    "message": {
       "type": "text",
       "required": true
     },
-    "conatctInfo": {
+    "contactInfo": {
       "type": "string",
       "required": true
     }
