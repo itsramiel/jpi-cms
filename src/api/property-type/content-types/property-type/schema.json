@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "project_types",
+  "collectionName": "property_types",
   "info": {
-    "singularName": "project-type",
-    "pluralName": "project-types",
-    "displayName": "propertyType",
-    "description": ""
+    "singularName": "property-type",
+    "pluralName": "property-types",
+    "displayName": "propertyType"
   },
   "options": {
     "draftAndPublish": true
@@ -23,13 +22,8 @@
         }
       },
       "type": "string",
+      "required": true,
       "default": "Apartment"
-    },
-    "properties": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::property.property",
-      "mappedBy": "property_type"
     }
   }
 }
