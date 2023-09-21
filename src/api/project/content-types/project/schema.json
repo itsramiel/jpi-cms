@@ -60,29 +60,6 @@
       "relation": "oneToMany",
       "target": "api::amenity.amenity"
     },
-    "propertyTypes": {
-      "displayName": "propertyType",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "property-type.property-type"
-    },
-    "pricing": {
-      "displayName": "pricing",
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "component": "pricing.pricing",
-      "required": false
-    },
     "nearbyPOI": {
       "displayName": "nearbyPOI",
       "type": "component",
@@ -95,16 +72,52 @@
       "component": "nearby-poi.nearby-poi"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       }
+    },
+    "underConstruction": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::property.property",
+      "mappedBy": "project"
+    },
+    "downPaymentPercentage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer",
+      "required": true
+    },
+    "fullPaymentDiscount": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
