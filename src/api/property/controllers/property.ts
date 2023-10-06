@@ -16,6 +16,7 @@ export default factories.createCoreController(
         if (locale) {
           query = query.where("locale", locale);
         }
+        query.orderBy("bedroom_count", "asc");
 
         const distinctBedroomCounts = await query;
         ctx.body = (distinctBedroomCounts ?? []).map(
