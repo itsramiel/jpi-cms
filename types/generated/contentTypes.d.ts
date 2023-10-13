@@ -838,36 +838,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
-export interface ApiCurrencyCurrency extends Schema.CollectionType {
-  collectionName: 'currencies';
-  info: {
-    singularName: 'currency';
-    pluralName: 'currencies';
-    displayName: 'currency';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    code: Attribute.String & Attribute.Required & Attribute.DefaultTo<'USD'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::currency.currency',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::currency.currency',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiMessageMessage extends Schema.CollectionType {
   collectionName: 'messages';
   info: {
@@ -1058,11 +1028,6 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    currency: Attribute.Relation<
-      'api::property.property',
-      'oneToOne',
-      'api::currency.currency'
-    >;
     bedroomCount: Attribute.Integer &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -1166,7 +1131,6 @@ declare module '@strapi/types' {
       'api::amenity.amenity': ApiAmenityAmenity;
       'api::author.author': ApiAuthorAuthor;
       'api::blog.blog': ApiBlogBlog;
-      'api::currency.currency': ApiCurrencyCurrency;
       'api::message.message': ApiMessageMessage;
       'api::project.project': ApiProjectProject;
       'api::property.property': ApiPropertyProperty;
