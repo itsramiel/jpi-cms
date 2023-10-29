@@ -822,6 +822,13 @@ export interface ApiBlogBlog extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -960,6 +967,13 @@ export interface ApiProjectProject extends Schema.CollectionType {
         };
       }> &
       Attribute.DefaultTo<true>;
+    slug: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
